@@ -22,3 +22,15 @@ func (h *UserHandler) GetUsers(ctx *gin.Context) {}
 // @Success 200 {object} ResponseUser
 // @Router /v1/users/:id [get]
 func (h *UserHandler) GetUseById(ctx *gin.Context) {}
+
+// GetUseById godoc
+// @Summary ユーザー一覧を編集
+// @Tags EdirUser
+// @Accept json
+// @Produce json
+// @Param request body RequestUserParam  ture "ユーザー情報"
+// @Success 200 {object} Response
+// @Router /v1/users [post]
+func (h *UserHandler) EdirUser(ctx *gin.Context) {}
+
+
