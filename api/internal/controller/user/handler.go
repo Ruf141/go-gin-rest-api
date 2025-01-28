@@ -23,7 +23,7 @@ func (h *UserHandler) GetUsers(ctx *gin.Context) {}
 // @Router /v1/users/:id [get]
 func (h *UserHandler) GetUseById(ctx *gin.Context) {}
 
-// GetUseById godoc
+// EditUser godoc
 // @Summary ユーザー一覧を編集
 // @Tags EdirUser
 // @Accept json
@@ -33,4 +33,16 @@ func (h *UserHandler) GetUseById(ctx *gin.Context) {}
 // @Router /v1/users [post]
 func (h *UserHandler) EdirUser(ctx *gin.Context) {}
 
+// DeleteUser godoc
+// @Summary ユーザー一覧を編集
+// @Tags DeleteUser
+// @Accept json
+// @Produce json
+// @Param request path sreturn &UserHandler{}tring  ture "ユーザーID"
+// @Success 200 {object} Response
+// @Router /v1/users [delete]
+func (h *UserHandler) DeleteUser(ctx *gin.Context) {}
 
+func NewUserHandler() *UserHandler {
+	return &UserHandler{}
+}
