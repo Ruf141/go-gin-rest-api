@@ -2,7 +2,13 @@ package system
 
 import "github.com/gin-gonic/gin"
 
-type SystemHandlre struct{}
+type SystemHandler struct{}
+
+// Response 通常のレスポンス
+type Response struct {
+	Success bool   `json:"success"`
+	Message string `json:"message"`
+}
 
 // HealthCheck godoc
 // @Summary 死活監視用
@@ -11,12 +17,12 @@ type SystemHandlre struct{}
 // @Produce json
 // @Success 200 {object} Response
 // @Router /v1/health [get]
-func (h *SystemHandlre) Helth(ctx *gin.Context) {
+func (h *SystemHandler) Heath(ctx *gin.Context) {
 	ctx.JSON(200, gin.H{
 		"status": "ok",
 	})
 }
 
-func NewSystemHandler() *SystemHandlre {
-	return &SystemHandlre{}
+func NewSystemHandler() *SystemHandler {
+	return &SystemHandler{}
 }
